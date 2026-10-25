@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CERIN Recovery Lab: independently verifying recovery of encrypted synthetic research-journal backups using Google Drive and rclone.">
+  <meta name="robots" content="index,follow">
+  <title>CERIN Recovery Lab | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="CERIN Recovery Lab home"><span class="brand-symbol" aria-hidden="true">C/</span><span>CERIN <strong>Recovery Lab</strong></span></a>
+      <nav aria-label="Main navigation"><a href="./" aria-current="page">Home</a><a href="privacy.html">Privacy policy</a></nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Private operator research utility</div>
+        <h1 id="hero-heading">Independent recovery. <span>Verifiable evidence.</span></h1>
+        <p class="lead">CERIN Recovery Lab is a controlled, nonproduction workflow for testing whether an encrypted, synthetic research-journal backup can be retrieved and cryptographically verified after loss of its original computer.</p>
+        <div class="hero-actions"><a class="primary-link" href="privacy.html">Read our privacy policy <span aria-hidden="true">↗</span></a><a class="secondary-link" href="https://github.com/cerincontrol/cerin-recovery-lab">Project repository <span aria-hidden="true">↗</span></a></div>
+      </section>
+      <section class="section" aria-labelledby="workflow-heading">
+        <div class="section-intro"><p class="section-label">The laboratory</p><h2 id="workflow-heading">How it works</h2><p>The laboratory separates the creation of a backup from independent verification of its contents.</p></div>
+        <div class="steps">
+          <article class="step"><div class="step-num">01</div><h3>Generate synthetic evidence</h3><p>Create a small test journal, signed checkpoint, checksums and a publicly verifiable trust anchor. No production research data is needed.</p></article>
+          <article class="step"><div class="step-num">02</div><h3>Store encrypted test files</h3><p>Use rclone with Google Drive to hold an isolated laboratory copy protected by a separate encryption key.</p></article>
+          <article class="step"><div class="step-num">03</div><h3>Verify on a separate host</h3><p>Download with independently safeguarded read-only credentials and validate the exact recovered bytes and journal signature.</p></article>
+        </div>
+      </section>
+      <section class="callout" aria-labelledby="boundaries-heading">
+        <div class="callout-text"><p class="section-label">Scope and limitations</p><h2 id="boundaries-heading">Laboratory testing, not production recovery</h2><p>A successful test verifies a specific synthetic bundle. It does not establish complete recovery of production databases, continuous acquisition history, Google-account resilience or authorization to replay, delete or prune backups.</p></div>
+        <div class="callout-mark" aria-hidden="true"><span>LAB</span><small>Nonproduction</small></div>
+      </section>
+      <section class="section compact" aria-labelledby="access-heading">
+        <p class="section-label">Access and privacy</p><h2 id="access-heading">Operator-controlled Google Drive access</h2>
+        <p>Google OAuth authorization is used only by an operator-configured rclone client. Upload and recovery connections can request different Google Drive permissions. The public website itself has no Google sign-in function and does not ask visitors for credentials.</p>
+        <p>Credentials, encryption secrets, backup contents and test results must not be published in this site's source code. The <a href="privacy.html">privacy policy</a> explains the intended data handling and how to revoke access.</p>
+      </section>
+    </main>
+    <footer class="site-footer"><div><strong>CERIN Recovery Lab</strong><span>Independent synthetic backup verification</span></div><div><a href="./">Home</a><a href="privacy.html">Privacy policy</a><a href="https://github.com/cerincontrol/cerin-recovery-lab">GitHub</a></div><small>© 2026 CERIN Recovery Lab. A private operator research utility.</small></footer>
+  </div>
+</body>
+</html>
